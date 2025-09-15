@@ -1,0 +1,39 @@
+/* reset */
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* reset ends */
+
+/* variables */
+:root{
+    --nav-bcg:#1F85DE;
+    --nav-hov-bcg:rgb(15, 15, 15);
+    --nav-hov-frg:rgb(221, 79, 79);
+    --nav-act-bcg:rgb(43, 42, 42);
+    --nav-act-frg:rgb(180, 111, 111);
+}
+/* variables end */
+
+#nav{
+    background-color: var(--nav-bcg);
+}
+#nav a:link,a:visited{
+    text-decoration: none;
+    color: var(--nav-hov-bcg);
+}
+#nav a:hover {
+    background-color: var(--nav-hov-bcg);
+    color: var(--nav-hov-frg);
+}
+#nav a:active{
+    background-color: var(--nav-act-bcg);
+    color: var(--nav-act-frg);
+}
