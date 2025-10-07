@@ -4,36 +4,95 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
-
 /* 2. Remove default margin */
 * {
   margin: 0;
+  padding: 0;
 }
 
-/* reset ends */
+
 
 /* variables */
 :root{
-    --nav-bcg:#1F85DE;
-    --nav-hov-bcg:rgb(15, 15, 15);
-    --nav-hov-frg:rgb(221, 79, 79);
-    --nav-act-bcg:rgb(43, 42, 42);
-    --nav-act-frg:rgb(180, 111, 111);
+    --primary-bcg: rgb(19, 19, 19);
 }
 /* variables end */
 
-#nav{
-    background-color: var(--nav-bcg);
+
+body{
+    font-family: sans-serif;
+    min-height:100vh;
+    background:url("https://picsum.photos/1600/900") no-repeat center center/cover;
 }
-#nav a:link,a:visited{
-    text-decoration: none;
-    color: var(--nav-hov-bcg);
+.navbar{
+    display:flex;
+    align-items:center;
+    justify-content: flex-end;
+    height: 80px;
+    width: 100%;
+    position:sticky;
+    top: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 999;
 }
-#nav a:hover {
-    background-color: var(--nav-hov-bcg);
-    color: var(--nav-hov-frg);
+.navbar-logo{
+    margin-right: auto;
+    padding: 10px;
 }
-#nav a:active{
-    background-color: var(--nav-act-bcg);
-    color: var(--nav-act-frg);
+.navbar-toggle{
+    display: none;
+    background: transparent;
+    padding: 10px;
+    border: none;
+    cursor:pointer;
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+
+}
+
+
+@media (max-width:880px){
+    .navbar{
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
+    .navbar-menu{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.7rem;
+        position: absolute;
+        height: 100vh;
+        width: 250px;
+        top: 0;
+        right: 0;
+        background: transparent;
+        padding: 5rem 1.5rem;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.5);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+    .navbar-menu.active{
+        display:flex
+    }
+    .navbar-toggle{
+        display: block;
+        z-index: 999;
+    }
+    .navbar-toggle.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .navbar-toggle.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .navbar-toggle.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
