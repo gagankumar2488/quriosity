@@ -25,7 +25,7 @@ body{
     left: 0;
     width: 100%;
     min-height:100vh;
-    background:url("../assets/back5.jpg") no-repeat center center/cover;
+    background:url("../assets/back5\(grey\)contra.jpg") no-repeat center center/cover;
     background-color: black;
     background-attachment: scroll;
 }
